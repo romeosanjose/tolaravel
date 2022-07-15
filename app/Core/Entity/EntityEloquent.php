@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class EntityEloquent extends Model implements Entity
 {
+
+    public $timestamps = false;
+    
     protected $id;
 
     public function getId(){

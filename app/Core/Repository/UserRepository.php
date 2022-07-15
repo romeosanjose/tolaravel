@@ -4,5 +4,5 @@ namespace App\Core\Repository;
 
 interface UserRepository extends Repository
 {
-    public function appendComments($comments);    
+    public function appendComments($id,$comments);    
 }

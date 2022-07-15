@@ -21,3 +21,5 @@ Route::get('/', function () {
 });
 
 Route::get('/users/{id}', [UserController::class, 'show']);
+
+

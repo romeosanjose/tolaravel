@@ -14,7 +14,7 @@ class UserUseCase
     }
 
     public function getRecord($id){
-        $data = $this->userRepository->find($id)->first();
+        $data = $this->userRepository->find($id);
         
         $user = new User();
         $user->setId($data['id']);
@@ -22,6 +22,17 @@ class UserUseCase
         $user->setComments($data['comments']);
 
         return $user;
+    }
+
+    public function appendComments($id, $comments){
+        if($comments == null || $comments == "") {
+            throw new UserCommentException();
+        }
+        
+        $user = $this->getRecord($id);
+        $comments = $user->getComments() . "\n".$comments;
+       
+        return $this->userRepository->appendComments($id, $comments);
     }
 
 }

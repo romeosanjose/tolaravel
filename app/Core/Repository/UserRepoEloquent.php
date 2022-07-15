@@ -9,11 +9,18 @@ class UserRepoEloquent implements UserRepository
     public function find($id)
     {
         return User::where('id',$id)
-            ->get();
+            ->get()
+            ->first();
     }
 
-    public function appendComments($comments)
+    public function appendComments($id, $comments)
     {
+        $user = User::find($id);
+        $user->comments = $comments;
         
+        return $user->save();
+
+        
+            // ->update(['comments' => $comments]);
     }
 }
