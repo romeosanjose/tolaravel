@@ -14,7 +14,8 @@ class UserUseCase
     }
 
     public function getRecord($id){
-        $data = $this->userRepository->find($id);
+        $data = $this->userRepository->find($id)->first();
+        
         $user = new User();
         $user->setId($data['id']);
         $user->setName($data['name']);
