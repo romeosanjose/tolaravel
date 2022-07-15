@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Middleware\TransactionTokenValid;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,4 +19,5 @@ use App\Http\Controllers\UserController;
 //     return $request->user();
 // });
 
-Route::post('/users', [UserController::class, 'addComment']);
+Route::post('/users', [UserController::class, 'addComment'])
+    ->middleware(TransactionTokenValid::class);
