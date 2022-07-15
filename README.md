@@ -8,11 +8,17 @@
 </p>
 
 ## To Laravel
+
 GET /users/{1} -  will show the record of the user
+
 POST /api/users/comment  - will append comments
+
     - body:
+    
         - id        - identifier of user
+        
         - comments  - comment to append
+        
         - password  - secret key or token of the user
         
 
