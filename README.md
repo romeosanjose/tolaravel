@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## To Laravel
+GET /users/{1} -  will show the record of the user
+POST /api/users/comment  - will append comments
+    - body:
+        - id        - identifier of user
+        - comments  - comment to append
+        - password  - secret key or token of the user
+        
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
