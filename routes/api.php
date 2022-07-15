@@ -19,5 +19,5 @@ use App\Http\Middleware\TransactionTokenValid;
 //     return $request->user();
 // });
 
-Route::post('/users', [UserController::class, 'addComment'])
+Route::post('/users/comment', [UserController::class, 'addComment'])
     ->middleware(TransactionTokenValid::class);
